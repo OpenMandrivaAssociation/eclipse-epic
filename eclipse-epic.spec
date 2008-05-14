@@ -29,6 +29,7 @@ BuildRequires:    antlr
 BuildRequires:    jdom
 BuildRequires:    gnu-regexp
 BuildRequires:    brazil
+BuildRequires:    zip
 Requires:         java >= 1.6
 Requires:         jpackage-utils
 Requires:         eclipse-platform
