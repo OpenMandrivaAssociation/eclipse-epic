@@ -2,7 +2,7 @@
 %define gcj_support      1
 
 Name:      eclipse-epic
-Version:   0.6.23
+Version:   0.6.24
 Release:   %mkrel 0.1.1
 Summary:   Perl Eclipse plugin
 Group:     Development/Perl
