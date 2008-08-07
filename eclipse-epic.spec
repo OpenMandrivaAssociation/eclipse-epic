@@ -3,7 +3,7 @@
 
 Name:      eclipse-epic
 Version:   0.6.24
-Release:   %mkrel 0.1.1
+Release:   %mkrel 2.1.1
 Summary:   Perl Eclipse plugin
 Group:     Development/Perl
 License:   CPL
