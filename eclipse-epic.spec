@@ -1,9 +1,9 @@
-%define eclipse_base     %{_datadir}/eclipse
-%define gcj_support      1
+%define eclipse_base     %{_libdir}/eclipse
+%define gcj_support      0
 
 Name:      eclipse-epic
 Version:   0.6.24
-Release:   %mkrel 2.1.1
+Release:   %mkrel 2.3.1
 Summary:   Perl Eclipse plugin
 Group:     Development/Perl
 License:   CPL
@@ -32,7 +32,7 @@ BuildRequires:    brazil
 BuildRequires:    zip
 Requires:         java >= 1.6
 Requires:         jpackage-utils
-Requires:         eclipse-platform
+Requires:         eclipse-platform >= 3.4
 Requires:         antlr
 Requires:         jdom
 Requires:         gnu-regexp
@@ -97,18 +97,19 @@ popd
 
 %install
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}%{eclipse_base}
-unzip -q -d %{buildroot}%{eclipse_base}/.. build/rpmBuild/org.epic.feature.main.zip
+installDir=%{buildroot}%{_datadir}/eclipse/dropins/epic
+install -d -m 755 $installDir
+unzip -q -d $installDir build/rpmBuild/org.epic.feature.main.zip
 
 # need to recreate the symlinks to libraries that were setup in "prep"
 # because for some reason the ant copy task doesn't preserve them
-pushd %{buildroot}%{eclipse_base}/plugins/org.epic.lib_*/lib
+pushd $installDir/eclipse/plugins/org.epic.lib_*/lib
 rm *.jar
 build-jar-repository -s -p . jdom antlr gnu-regexp brazil
 popd
 
 # ensure source packages are correctly verisoned
-pushd %{buildroot}%{eclipse_base}/plugins
+pushd $installDir/eclipse/plugins
 for p in org.epic.perleditor \
          org.epic.regexp \
          org.epic.debug; do
@@ -131,13 +132,6 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc %{eclipse_base}/features/org.epic.feature.main_%{version}/license.html
-%{eclipse_base}/features/org.epic.feature.main_%{version}/feature.xml
-%{eclipse_base}/features/org.epic.feature.main_%{version}/icons/epic_install.jpg
-%{eclipse_base}/plugins/org.epic.debug_*
-%{eclipse_base}/plugins/org.epic.doc_*
-%{eclipse_base}/plugins/org.epic.lib_*
-%{eclipse_base}/plugins/org.epic.perleditor_*
-%{eclipse_base}/plugins/org.epic.regexp_*
-%{eclipse_base}/plugins/org.epic.source_*
+%doc org.epic.feature.main/license.html
+%{_datadir}/eclipse/dropins/epic
 %{gcj_files}
