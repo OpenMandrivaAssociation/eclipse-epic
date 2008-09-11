@@ -2,8 +2,8 @@
 %define gcj_support      0
 
 Name:      eclipse-epic
-Version:   0.6.24
-Release:   %mkrel 2.3.1
+Version:   0.6.25
+Release:   %mkrel 0.1.1
 Summary:   Perl Eclipse plugin
 Group:     Development/Perl
 License:   CPL
