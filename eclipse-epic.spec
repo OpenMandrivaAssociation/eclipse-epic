@@ -2,8 +2,8 @@
 %define gcj_support      0
 
 Name:      eclipse-epic
-Version:   0.6.25
-Release:   %mkrel 0.1.1
+Version:   0.6.27
+Release:   %mkrel 0.1.0
 Summary:   Perl Eclipse plugin
 Group:     Development/Perl
 License:   CPL
@@ -41,9 +41,9 @@ Requires:         perl
 Requires:         perl-PadWalker
 
 %description
-EPIC is an open source Perl IDE based on the Eclipse platform. Features 
-supported are syntax highlighting, on-the-fly syntax check, content assist, 
-perldoc support, source formatter, templating support, a regular expression 
+EPIC is an open source Perl IDE based on the Eclipse platform. Features
+supported are syntax highlighting, on-the-fly syntax check, content assist,
+perldoc support, source formatter, templating support, a regular expression
 view and a Perl debugger.
 
 %prep
@@ -124,9 +124,9 @@ popd
 rm -rf %{buildroot}
 
 %if %{gcj_support}
-%post 
+%post
 %{update_gcjdb}
-%postun 
+%postun
 %{clean_gcjdb}
 %endif
 
