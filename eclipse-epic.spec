@@ -2,7 +2,7 @@
 
 Name:      eclipse-epic
 Version:   0.6.39
-Release:   1
+Release:   3
 Summary:   Perl Eclipse plug-in
 Group:     Development/Java
 License:   CPL
