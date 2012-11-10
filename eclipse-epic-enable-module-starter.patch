@@ -1,0 +1,25 @@
+Index: src/org/epic/perleditor/preferences/PreferenceConstants.java
+===================================================================
+RCS file: /cvsroot/e-p-i-c/org.epic.perleditor/src/org/epic/perleditor/preferences/PreferenceConstants.java,v
+retrieving revision 1.18
+diff -u -r1.18 PreferenceConstants.java
+--- src/org/epic/perleditor/preferences/PreferenceConstants.java	10 Aug 2008 13:38:06 -0000	1.18
++++ src/org/epic/perleditor/preferences/PreferenceConstants.java	16 Mar 2009 23:42:13 -0000
+@@ -667,7 +667,7 @@
+         store.setDefault(BROWSER_START_URL, "http://"); //$NON-NLS-1$
+         
+         store.setDefault(DEBUG_INTERPRETER_TYPE, DEBUG_INTERPRETER_TYPE_STANDARD);
+-        store.setDefault(DEBUG_PERL_EXECUTABLE, "perl"); //$NON-NLS-1$
++        store.setDefault(DEBUG_PERL_EXECUTABLE, "perl -T"); //$NON-NLS-1$
+         store.setDefault(DEBUG_SHOW_WARNINGS, true);
+         store.setDefault(DEBUG_TAINT_MODE, false);
+         store.setDefault(DEBUG_DEBUG_CONSOLE, false);
+@@ -745,7 +745,7 @@
+         store.setDefault(EDITOR_NUMBER_COLOR_BOLD, false);
+         store.setDefault(EDITOR_INVALID_COLOR_BOLD, false);
+         
+-        store.setDefault(MODULE_STARTER_ENABLED, false);
++        store.setDefault(MODULE_STARTER_ENABLED, true);
+         store.setDefault(MODULE_STARTER_DEFAULT_LOCATION, true);
+         store.setDefault(MODULE_STARTER_LOCATION, ""); //$NON-NLS-1$
+         store.setDefault(MODULE_STARTER_OVERRIDE_CONFIG, true);
