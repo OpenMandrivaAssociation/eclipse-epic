@@ -6,7 +6,7 @@ Release:   3
 Summary:   Perl Eclipse plug-in
 Group:     Development/Java
 License:   CPL
-URL:       http://www.epic-ide.org/
+URL:       https://www.epic-ide.org/
 
 # source tarball and the script used to generate it from upstream's source control
 # script usage:
